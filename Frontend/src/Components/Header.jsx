@@ -24,11 +24,7 @@ const Header = () => {
   
  const{cartDetails,CartCount,setCartCount}=useContext(Usercontext)
  const UserId=User?.data?._id
-const searchInput=useLocation()
-const UrlSearch=new URLSearchParams(searchInput?.search)
-const SearchQuery=UrlSearch.getAll("q")
 
-const [search, setsearch] = useState(SearchQuery)
  
   
 
@@ -62,15 +58,7 @@ const [search, setsearch] = useState(SearchQuery)
   }
  
   const handleSearch=(e)=>{
-    const {value}=e.target;
-    setsearch(value)
-  
-    if(value){
-      navigate(`/search?q=${value}`)
-    }else{
-      navigate("/search")
-
-    }
+   
     
   }
 
