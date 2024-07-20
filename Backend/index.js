@@ -172,7 +172,7 @@ app.post("/api/signup",async(req,res)=>{
 
 app.post("/api/login",async(req,res)=>{
 
-    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
     // res.header('Access-Control-Allow-Credentials', 'true');
     const{email,password}=req.body
     if (!email) {
