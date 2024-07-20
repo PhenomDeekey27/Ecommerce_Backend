@@ -76,7 +76,7 @@ const Header = () => {
            
         </div>
         <div className="hidden md:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow-lg pl-2">
-          <input type="text" placeholder="Search for products here" className="w-full focus:border-none outline-none" onChange={handleSearch}  value={search}/>
+          <input type="text" placeholder="Search for products here" className="w-full focus:border-none outline-none" onChange={handleSearch} />
           <div className="text-lg bg-orange-500 min-w-[50px] h-8 flex items-center justify-center rounded-r-lg">
             <FaSearch />
 
