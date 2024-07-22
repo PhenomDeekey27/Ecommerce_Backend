@@ -16,7 +16,7 @@ import { enqueueSnackbar } from "notistack";
 import BaseUrl from "../../baseUrl";
 
 
-const Header = () => {
+const Header = ({searchValue,setsearchValue}) => {
   const {User} = useSelector(state=>state.User ? state.User : null)
   const navigate=useNavigate()
   console.log(User)
@@ -58,6 +58,8 @@ const Header = () => {
   }
  
   const handleSearch=(e)=>{
+    navigate("/search")
+    setsearchValue(e.target.value)
    
     
   }

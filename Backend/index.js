@@ -632,7 +632,7 @@ app.post("/api/remove-cart-item",async(req,res)=>{
 app.post("/api/search_query-product",async(req,res)=>{
     try {
 
-        const query=req.query.q
+        const query=req.body.value
        
         const regex= new RegExp(query,"i","g")
         const product=await ProductModel.find({

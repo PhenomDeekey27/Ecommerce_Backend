@@ -24,10 +24,12 @@ import Cancel from "./Pages/Cancel"
 import Orderpage from "./Pages/Orderpage"
 import AdminOrders from "./Pages/AdminOrders"
 import BaseUrl from "../baseUrl"
+import { useState } from "react"
 
 
 
 const App = () => {
+  const [searchValue, setsearchValue] = useState("")
 
   const {User}=useSelector(state=>state?.User)
   const dispatch=useDispatch();
@@ -67,7 +69,7 @@ const App = () => {
     <div>
       
       <BrowserRouter>
-      <Header></Header>
+      <Header setsearchValue={setsearchValue}></Header>
       <div className="pt-20">
       <Routes>
           <Route path="/" element={<Home></Home>}></Route>
@@ -83,7 +85,7 @@ const App = () => {
           <Route path="/product-category" element={<CategoryProduct></CategoryProduct>}></Route>
           <Route path="/single-product/:product_id" element={<SingleProduct></SingleProduct>}></Route>
           <Route path="/Cart" element={<CartPage></CartPage>}></Route>
-          <Route path="/search" element={<SearchProduct></SearchProduct>}></Route>
+          <Route path="/search" element={<SearchProduct searchValue={searchValue} setsearchValue={setsearchValue}></SearchProduct>}></Route>
           <Route path="/success" element={<Success></Success>}></Route>
           <Route path="/cancel" element={<Cancel></Cancel>}></Route>
           <Route path="/orders" element={<Orderpage></Orderpage>}></Route>

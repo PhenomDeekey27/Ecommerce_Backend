@@ -8,7 +8,7 @@ import { Usercontext } from '../../Context/UserContext'
 import { useSelector } from 'react-redux'
 import BaseUrl from '../../baseUrl'
 
-const SearchProduct = () => {
+const SearchProduct = ({searchValue,setsearchValue}) => {
   const {AddtoCart,a}=useContext(Usercontext)
 
   const [data, setdata] = useState([])
@@ -20,9 +20,13 @@ const SearchProduct = () => {
 
   
 
+  
+
   const fetchProduct=async()=>{
     setloading(true)
-    const response=await BaseUrl.post("/api/search_query-product"+query.search)
+    const response=await BaseUrl.post("/api/search_query-product",{
+      value:searchValue
+    })
    
     setdata(response.data.data)
     setloading(false)
